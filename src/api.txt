@@ -1,0 +1,8 @@
+function fetchUser() {
+        fetch("https://randomuser.me/api/?inc=gender,name,nat,email,location,phone,dob&results=10")
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+          setUser(data)
+        }) 
+    }
