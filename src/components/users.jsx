@@ -1,26 +1,23 @@
-export default function Users(props) {
+import UsersProfile from "/src/components/users-profile.jsx";
+import {useEffect, useState} from 'react';
+export default function Users() {
+  const [user, setUser] = useState([])
+  useEffect(() =>  {
+        fetch("https://randomuser.me/api/?inc=id,gender,name,picture,email,location,phone,dob&results=8")
+        .then(res => res.json())
+        .then(data => {    
+          setUser(data.results)
+        }) 
+  }, []);
+    const userData = user;
 
+  const usersMapped = userData.map((item => {
+  return <UsersProfile key={item.email} img={item.picture.large} first={item.name.first} last={item.name.last} location={item.location.country} dob={item.dob.age} phone={item.phone} email={item.email}/>
+}))
   return (
-      <section className="user-content">
-      <img className="user-picture" src={props.img}/>
-      <div className="card-details">
-        <div className="card-flex">
-          <i className="icon fa-sharp fa-solid fa-location-dot"></i>
-          <div className="location">{props.location}</div>
-        </div>
-        <div className="name">{props.first} {props.last}</div>
-        <div className="dob">{props.dob}</div>
-        <div className="description">
-          <div className="card-flex">
-            <i className="icon fa-solid fa-phone"></i>
-            <div className="phone-no">{props.phone}</div>
-          </div>
-          <div className="card-flex">
-            <i className="icon fa-regular fa-envelope"></i>
-            <div className="email">{props.email}</div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div className="user-overall">
+      <h1>User Details</h1>
+      <>{usersMapped}</>
+    </div>
   )
 }

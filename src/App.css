@@ -12,11 +12,8 @@ body {
 
 main {
   margin: 0 6rem;
-  height: 100vh;
+/*   height: 100vh; */
   margin:40px;
-  position:absolute;
-  top:60px;
-  z-index:0;
 }
 
 .navbar {
@@ -34,16 +31,16 @@ h1 {
   font-size:9rem;
 }
 
-div {
-  font-size: 2.4rem;
-}
+.desc1 {
+    font-size:4.8rem;
+  font-size: 200;
+  margin-bottom: 4.8rem;
+    color:grey;
+  }
 
-.desc-joke {
-  margin-top:2rem;
-  font-size: 4rem;
-  width:80%;
-  font-weight: 300;
-}
+/* .desc-joke {
+  font-size: 2.4rem;
+} */
 
 
 .nav-items {
@@ -57,13 +54,23 @@ div {
   display: grid; 
   grid-template-columns: 1fr 1fr; 
   justify-content: center;
+  margin-top: 9rem;
   align-items: center;
+  
+}
+
+.desc-joke {
+  margin-top:2rem;
+  font-size: 4rem;
+  width:80%;
+  font-weight: 300;
 }
 
 .item2 {
   display: flex;
-  justify-content:right;
+  justify-content:center;
 }
+
 
 .user-content {
   display: flex;
@@ -72,6 +79,11 @@ div {
   align-items:center;
   margin:30px 5rem;
   border-bottom: 1px solid grey;
+  padding-bottom: 3rem;
+}
+
+:nth-child(1 of .user-content) {
+  margin:10rem;
 }
 
 .card-details {
@@ -90,29 +102,102 @@ div {
   font-size:1.8rem;
 }
 
-.loc {
+.location {
   text-transform: uppercase;
+  font-size: 1.2rem
 }
 
 .user-picture {
-  width: 180px;
-  height: 250px;
+  width: 160px;
+  height: 220px;
   object-fit: cover;
   border-radius: 20px;
 }
 
 .name {
   font-weight:500;
-  font-size: 2.4rem;
+  font-size: 3.6rem;
   margin: 15px 0 25px 0;
 }
 
 .dob {
   font-weight:700;
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-bottom:10px;
 }
 
-.phone-no {
+.email, .phone-no {
+  font-size: 1.6rem;
+}
+
+.back-home {
+  margin-top:2rem;
+  display:inline-flex;
+  align-items:center;
+  gap:1rem;
+  padding:1.5rem;
+  border: 1px solid black;
+  border-radius:.3rem;
+  font-size:1.6rem;
+  text-decoration:none;
+  color:black;
+}
+
+@media only screen and (max-width: 600px){
+/* 	.page-container {   
+  margin:20px;
+  margin-top:30px;
+} */
+  .user-content {
+    
+  margin:20px 2rem;
+  }
   
+  .user-picture {
+  width: 120px;
+  height: 170px;
+  }
+
+  .name {
+  font-size: 2.4rem;
+  margin: 10px 0 15px 0;
+  }
+
+  .location {
+  font-size:1.2rem;
+  }
+
+  .grid-container {
+    margin-top:10rem;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    text-align: center;
+}
+
+  h1 {
+  font-size:6rem;
+}
+
+  .desc1 {
+    font-size:2.7rem;
+    color:grey;
+  }
+.desc-joke {
+  margin-top:2rem;
+  font-size: 2.5rem;
+  width:100%;
+  font-weight: 300;
+}
+
+.item2 {
+  margin-top:2rem;
+  display: flex;
+  justify-content:center;
+}
+
+  .osita {
+    width:400px;
+  }
 }

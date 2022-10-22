@@ -7,7 +7,7 @@ export default function Homepage() {
         <div className="desc-joke">I'm not sure you'll find what you're looking for here. Why not try next page. I'm not even sure</div>
       </div>
       <div className="grid-item item2">
-        <img src="/src/osita3.png"></img>
+        <img className="osita" src="/src/osita3.png"></img>
       </div>
     </main>
   )
