@@ -6,3 +6,14 @@ function fetchUser() {
           setUser(data)
         }) 
     }
+
+
+
+
+async function fetchUser() {
+        const res = await fetch("https://randomuser.me/api/?inc=id,gender,name,email,location,phone,dob&results=1")
+        const data = await res.json();       
+          console.log(data.results)
+          console.log(data.results.email)
+          setUser([data.results])
+    }
