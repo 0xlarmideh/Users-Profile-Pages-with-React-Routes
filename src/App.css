@@ -56,20 +56,23 @@ h1 {
   justify-content: center;
   margin-top: 9rem;
   align-items: center;
-  
+}
+
+.item1 {
+  width:100%;
 }
 
 .desc-joke {
   margin-top:2rem;
   font-size: 4rem;
-  width:80%;
+  width:100%;
   font-weight: 300;
 }
 
-.item2 {
+/* .item2 {
   display: flex;
   justify-content:center;
-}
+} */
 
 
 .user-content {
@@ -78,12 +81,8 @@ h1 {
 /*   justify-content: center; */
   align-items:center;
   margin:30px 5rem;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #d4d3d3;
   padding-bottom: 3rem;
-}
-
-:nth-child(1 of .user-content) {
-  margin:10rem;
 }
 
 .card-details {
@@ -95,6 +94,11 @@ h1 {
   display:flex;
   align-items:center;
   gap:10px;
+}
+
+.user-h1 {
+  margin:8rem 6rem 0 6rem;
+  font-size:6rem;
 }
 
 .icon {
@@ -143,6 +147,11 @@ h1 {
   color:black;
 }
 
+.osita {
+  max-width:100%;
+}
+
+
 @media only screen and (max-width: 600px){
 /* 	.page-container {   
   margin:20px;
@@ -176,9 +185,14 @@ h1 {
     text-align: center;
 }
 
-  h1 {
+  h1, {
   font-size:6rem;
 }
+
+  .user-h1 {
+    font-size:4rem;
+    margin-left:2rem;
+  }
 
   .desc1 {
     font-size:2.7rem;

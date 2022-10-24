@@ -10,10 +10,21 @@ function fetchUser() {
 
 
 
-async function fetchUser() {
-        const res = await fetch("https://randomuser.me/api/?inc=id,gender,name,email,location,phone,dob&results=1")
+const fetchUsers = async () => {
+        const res = await fetch("https://randomuser.me/api/?inc=id,gender,name,picture,email,location,phone,dob&results=100")
         const data = await res.json();       
-          console.log(data.results)
-          console.log(data.results.email)
-          setUser([data.results])
-    }
+          setUsers(data.results)
+          setIsLoading(false)
+    };
+    fetchUsers();
+
+
+
+useEffect(() =>  {
+        fetch("https://randomuser.me/api/?inc=id,gender,name,picture,email,location,phone,dob&results=100")
+        .then(res => res.json())
+        .then(data => {    
+          setUsers(data.results)
+          setIsLoading(false)
+        }) 
+  }, []);
