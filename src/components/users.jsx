@@ -64,6 +64,7 @@ export default function Users() {
     <div className="user-overall">
       <h1 className="user-h1">User Details</h1>
       <>{usersMapped}</>
+      <div>Page {currentPage} of {postLength} </div>
       <section className="pagination-container">
       <ul className="pagination">{pageNumbers}</ul>
       </section>
