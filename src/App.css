@@ -185,10 +185,7 @@ button:focus {
 }
 
 @media only screen and (max-width: 800px){
-/* 	.page-container {   
-  margin:20px;
-  margin-top:30px;
-} */
+
   .user-content {
     
   margin:20px 2rem;
@@ -246,4 +243,20 @@ button:focus {
   .osita {
     width:400px;
   }
+
+  .pagination-container, .pagination {
+  display:flex;
+  gap: .1rem;
+}
+
+  button {
+  padding:.5rem .9rem;
+  font-size: 1.3rem;
+  background:white;
+  outline:none;
+  border:1px solid grey;
+}
+  .pagination-container,.current-page {
+  margin-left:2rem;
+}
 }
