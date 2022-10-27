@@ -25,6 +25,12 @@ main {
   top:0;
   width:100%;
   z-index:1;
+  color: grey;
+}
+
+.active {
+  color:white;
+  border-bottom:2px solid white;
 }
 
 h1 {
@@ -37,11 +43,6 @@ h1 {
   margin-bottom: 4.8rem;
     color:grey;
   }
-
-/* .desc-joke {
-  font-size: 2.4rem;
-} */
-
 
 .nav-items {
   text-decoration: none;
@@ -68,12 +69,6 @@ h1 {
   width:100%;
   font-weight: 300;
 }
-
-/* .item2 {
-  display: flex;
-  justify-content:center;
-} */
-
 
 .user-content {
   display: flex;
@@ -151,8 +146,45 @@ h1 {
   max-width:100%;
 }
 
+.current-page {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-left:6rem;
+}
 
-@media only screen and (max-width: 600px){
+.pagination-container, .pagination {
+  display:flex;
+  gap: .4rem;
+}
+
+.pagination-container {
+  margin-bottom: 4rem;
+  margin-left:6rem;
+}
+
+.strong {
+  font-size: 2rem;
+  font-weight: 700
+}
+
+button {
+  padding:.7rem 1.4rem;
+  font-size: 1.3rem;
+  background:white;
+  outline:none;
+  border:1px solid grey;
+}
+
+button:hover {
+  cursor:pointer;
+}
+
+button:focus {
+  background: #d2ecfa;
+  font-weight:700;
+}
+
+@media only screen and (max-width: 800px){
 /* 	.page-container {   
   margin:20px;
   margin-top:30px;

@@ -1,5 +1,6 @@
 import UsersProfile from "/src/components/users-profile.jsx";
 import {useEffect, useState} from 'react';
+
 export default function Users() {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -26,48 +27,31 @@ export default function Users() {
   const indexOfFirstPost = indexOfLastPost - perPage;
   const currentPosts = users.slice(indexOfFirstPost, indexOfLastPost)
 
+  // Mapping user details
+  const usersMapped = currentPosts.map((item => <UsersProfile key={item.email} img={item.picture.large} first={item.name.first} last={item.name.last} location={item.location.country} dob={item.dob.age} phone={item.phone} email={item.email}/>))
+  
   // Create page array
   const pageNumbersArr = [];
   let postLength = Math.ceil(length/perPage)
   for(let i=1; i<=postLength; i++) {
     pageNumbersArr.push(i)
   }
-  pageNumbersArr.unshift("Prev")
-  pageNumbersArr.push("Next")
-  
     
   // Map over Page Array and Change page
   const pageNumbers = pageNumbersArr.map(number => {
-     return <li key={number} className="page-item"><a onClick={(e) => {
-       if (number == "Prev"){
-         setCurrentPage((prev) => prev === 1 ? prev : prev-1)
-       }else if (number == "Next"){
-         setCurrentPage((prev) => prev === length/perPage ? prev : prev+1)
-       }else {
-       setCurrentPage(number);
-       }
-       if (number === "Prev" && currentPage ===1  || number === "Next" && currentPage ===postLength){
-         e.preventDefault()
-       }
-     }} href="#" className="page-link">{number}</a></li>
+     return <button key={number} onClick={(e) => setCurrentPage(number)} className="page-link">{number}</button>
   })
-
   
-  // Mapping user details
-  const usersMapped = currentPosts.map((item => {
-  return <UsersProfile key={item.email} img={item.picture.large} first={item.name.first} last={item.name.last} location={item.location.country} dob={item.dob.age} phone={item.phone} email={item.email}/>
-}))
+  return isLoading ? (<h1 className="user-h1">Loading......</h1>) :
+      (<div className="user-overall">
+        <h1 className="user-h1">User Details</h1>
+        <>{users && usersMapped}</>
+        <div className="current-page">Page <span className="strong">{currentPage} </span> of {postLength} </div><br></br>
+        <section className="pagination-container">
+          <button className="page-link" disabled={currentPage <= 1} aria-disabled={currentPage <= 1} onClick={() => setCurrentPage(prev => prev-1)}>Prev</button>
+          <div className="pagination">{pageNumbers}</div>
+          <button className="page-link" disabled={currentPage >= postLength} aria-disabled={currentPage >= 1} onClick={() => setCurrentPage(prev => prev+1)}>Next</button>
+        </section>
+      </div>)
 
-
-  
-  return (
-    <div className="user-overall">
-      <h1 className="user-h1">User Details</h1>
-      <>{usersMapped}</>
-      <div>Page {currentPage} of {postLength} </div>
-      <section className="pagination-container">
-      <ul className="pagination">{pageNumbers}</ul>
-      </section>
-    </div>
-  )
 }
