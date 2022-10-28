@@ -179,7 +179,7 @@ button:hover {
   cursor:pointer;
 }
 
-button:focus {
+button:active {
   background: #d2ecfa;
   font-weight:700;
 }
@@ -251,10 +251,6 @@ button:focus {
 
   button {
   padding:.5rem .9rem;
-  font-size: 1.3rem;
-  background:white;
-  outline:none;
-  border:1px solid grey;
 }
   .pagination-container,.current-page {
   margin-left:2rem;
